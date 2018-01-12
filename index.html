@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<!--
+
+===============================================================
+
+To whom this may concern,
+
+I don't know why you are looking at my source code.
+However, if you are a recruiter, please feel free to contact me.
+I don't bite.
+
+Thank you,
+Sungjae Kim
+
+===============================================================
+
+-->
+
+<html lang="en">
+
+<head>
+  <title>SungJae Kim</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!--        Smooth Scrolling-->
+  <script>
+    $(document).ready(function() {
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#main'], .col-sm-8 a[href='#contact']").on('click', function(event) {
+
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function() {
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      });
+    })
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106164040-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-106164040-1');
+  </script>
+
+</head>
+
+<body id="main">
+  <!--  Title Bar  -->
+  <div id="about" class="container-fluid">
+    <div class="col-sm-12">
+      <div class="logo"><span class="fa fa-graduation-cap "></span></div>
+      <h3>SungJae Kim</h3>
+      <h5>Student | Designer | Developer</h5>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="col-sm-6">
+
+      <div class="row">
+        <span class="fa fa-file-text-o sideIcon"></span>
+        <sectionTitle>SUMMARY</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-4">
+            <iAm>I am...</iAm>
+          </div>
+          <div class="col-sm-8">
+            <p>A motivated student seeking job opportunities to work as a software engineer to contribute skills and abilities to the growth of the organization and gain knowledge and expertise.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="fa fa-info-circle sideIcon"></span>
+        <sectionTitle>INFORMATION</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-4">
+            <p><b>Location</b>: </p>
+          </div>
+          <div class="col-sm-8">
+            <p>3382 Chelsea Park Ln #A</p>
+            <p>Norcorss, GA 30092</p>
+          </div>
+          <div class="col-sm-4">
+            <p><b>Contact</b>: </p>
+          </div>
+          <div class="col-sm-8">
+            <p>(404)-775-6111</p>
+            <p>sjk@sungjkim.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="fa fa-graduation-cap sideIcon"></span>
+        <sectionTitle>EDUCATION</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-4"><b>Georgia State University</b></div>
+          <div class="col-sm-3"><span class="fa fa-star-half-o"></span></div>
+          <div class="col-sm-4">2013 - 2018</div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-7"><i>Bachelor of Science in Computer Science</i></div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-4"><b>Alpharetta High School</b></div>
+          <div class="col-sm-3"><span class="fa fa-star"></span></div>
+          <div class="col-sm-4">2009 - 2013</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="fa fa-comments sideIcon"></span>
+        <sectionTitle>LANGUAGES</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-4">
+            <p>English</p>
+          </div>
+          <div class="col-sm-8">
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-adjust fa-flip-horizontal"></span>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-4">
+            <p>Korean</p>
+          </div>
+          <div class="col-sm-8">
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-circle"></span>
+            <span class="fa fa-adjust fa-flip-horizontal"></span>
+            <span class="fa fa-circle-o"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="fa fa-list-ul sideIcon"></span>
+        <sectionTitle>SKILLS</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-5">
+            <p><b>Front-End</b></p>
+          </div>
+          <div class="col-sm-7">
+            <ul>
+              <li>HTML</li>
+              <li>CSS + Bootstrap</li>
+              <li>React + Redux</li>
+              <li>Vanilla JavaScript + jQuery</li>
+              <li>Angular</li>
+              <li>React Native</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-5">
+            <p><b>Back-End</b></p>
+          </div>
+          <div class="col-sm-7">
+            <ul>
+              <li>Node.js</li>
+              <li>Java</li>
+              <li>C#</li>
+              <li>SQL</li>
+              <li>Firebase</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-5">
+            <p><b>CMS</b></p>
+          </div>
+          <div class="col-sm-7">
+            <ul>
+              <li>WordPress</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-5">
+            <p><b>Databases</b></p>
+          </div>
+          <div class="col-sm-7">
+            <ul>
+              <li>Microsoft SQL Server</li>
+              <li>MySQL/MariaDB</li>
+              <li>SQLite</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-5">
+            <p><b>Computational</b></p>
+          </div>
+          <div class="col-sm-7">
+            <ul>
+              <li>R</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-5">
+            <p><b>Basic Knowledge</b></p>
+          </div>
+          <div class="col-sm-7">
+            <ul>
+              <li>Arduino Programming</li>
+              <li>Assembly</li>
+              <li>C</li>
+              <li>GraphQL</li>
+              <li>PHP</li>
+              <li>Python</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <span class="fa fa-briefcase sideIcon"></span>
+        <sectionTitle>EXPERIENCE</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-2">Fall 2017</div>
+          <div class="col-sm-10">
+            <b>Software Developer Intern</b><br/> UPS | <i>Atlanta, GA</i>
+            <ul>
+              <lt>Network Planning - Demand</lt>
+              <li>Built predictive data models with historical data to forecast future incoming packages using Triple Exponential Smoothing (Holt-Winters) with R.</li>
+              <li>Implemented parallel computation to speed up forecasting by 8x by making use of core clusters.</li>
+              <li>Developed feature for visualizing data for NPT Angular 4 web application to visualize data for base, actual, forecast, and plan using NVD3.js.</li>
+              <li>Implemented drag and drop ability to move change-sets within proposal list of the NPT Application.</li>
+              <li>Implemented Golden Layout to allow multi-window layout management.</li>
+              <li>Refactored code to increase modularity and reusability of components by decoupling components.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">Summer 2017</div>
+          <div class="col-sm-10">
+            <b>Software Engineer Intern</b><br/> Intuit | <i>Plano, TX</i>
+            <ul>
+              <lt>ProConnect Tax Online</lt>
+              <li>Developed panel used for tax returns in using AngularJS and React.</li>
+              <li>Built new widget to allow accountants to create template requests using React + Redux.</li>
+              <li>Implemented drag and drop feature to change and maintain the order of checklists within a request.</li>
+              <li>Normalized data to use in Redux store using Normalizr.</li>
+              <li>Refactored previously built widgets to use Redux.</li>
+              <li>Built unit tests for widgets using Mocha, Chai, Sinon, & Enzyme.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">Spring 2017</div>
+          <div class="col-sm-10">
+            <b>Software Developer Intern</b><br/> UPS | <i>Atlanta, GA</i>
+            <ul>
+              <lt>Developed automatic inventory tracking completely from scratch:</lt>
+              <li>Built native Android application programmed using C# on Xamarin as a beacon receiver.</li>
+              <li>Built RESTful API using C# as part of the inventory tracking system used by the receiver application, QR and barcode scanning application, and the UI.</li>
+              <li>Built a Map UI using HTML, jQuery, Bootstrap on ASP.net MVC with filtering and searching feature.</li>
+              <lt>Improved upon previous C# projects passed on from a different team:</lt>
+              <li>A driver dispatch project using ASP.Net MVC.</li>
+              <li>An inventory management application for Windows Mobile 6.5.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2016-2017</div>
+          <div class="col-sm-10">
+            <b>Web & Software Developer</b><br/> Fyminds | <i>Atlanta, GA</i>
+            <ul>
+              <lt>WordPress Site</lt>
+              <li><a href="http://www.shundaogo.com/">ShunDaoGo</a> - Helped set up site.</li>
+              <li><a href="http://www.os-spa.com/">OsSpa</a> - Set up site.</li>
+              <li><a href="http://www.myichot.com/">IC HOT</a> - Set up and maintain sites from start to finish for clients. <br/><a href="http://www.sungjkim.com/ichotflyer.png">[Flyer]</a> - Designed a flyer using Adobe Photoshop.</li>
+              <li><a href="http://www.lifeartcabinetry.com/">LifeArtCabinetry</a> - Designed a popup based off of jQuery.</li>
+              <li><a href="http://www.tireaccents.com/">TireAccents</a> - Set up and maintain the TireAccents site, a start up business for selling car decals.</li>
+              <li>Researched to build plugin for importing XML file from WordPress e-commerce site into an application.</li>
+              <lt>Web Application</lt>
+              <li><a href="http://www.pollify.us/">PolliFy</a> - Built backend from scratch using Express, Node.js, and MongoDB. Built frontend from scratch using EJS, Bootstrap, jQuery.</li>
+              <lt>Mobile Application</lt>
+              <li><a href="http://www.worktive.com/">Worktive</a> - Android Java development. Use of custom API to search for jobs. Android App Development Use of Java, JSON, Parser, MySQL, etc.</li>
+              <li>Built java program to scrap from indeed.com demonstrates use of Jaunt and regex pattern/matcher.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2016-2017</div>
+          <div class="col-sm-10">
+            <b>Tech Committee</b><br/> PantherHackers | <i>Atlanta, GA</i>
+            <ul>
+              <li><a href="http://www.sungjkim.com/PH_Website/">Kata Website</a> - Hand-coded kata website to join the PH Tech Committee.</li>
+              <li>Set up a development environment for the PantherHackers main website.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2015-2016</div>
+          <div class="col-sm-10">
+            <b>Math Instructor</b><br/> Mathnasium | <i>Norcross, GA</i>
+            <ul>
+              <li>Tutored students K-12 in school math and SAT math.</li>
+              <li>1st place in center instructors’ math equation competition.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2015</div>
+          <div class="col-sm-10">
+            <b>Manager</b><br/> Advanced Fresh Concept | <i>Carrollton, GA</i>
+            <ul>
+              <li>Worked and train employees in a fast paced environment.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2014</div>
+          <div class="col-sm-10">
+            <b>Flexible Crew Member</b><br/> Yoi Yoi | <i>Atlanta, GA</i>
+            <ul>
+              <li>Worked host, waiter, sushi chef, and delivery.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2013</div>
+          <div class="col-sm-10">
+            <b>Flexible Crew Member</b><br/> Yum Bunz | <i>Atlanta, GA</i>
+            <ul>
+              <li>Worked busser, cashier, front line, back line, and expo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center">
+    <p>This resume is mobile friendly.</p>
+    <p>Last updated on August 18, 2017</p>
+    <a href="SungJaeKim_Resume.pdf">Download Resume</a> (.pdf)
+  </div>
+  <!--        Footer-->
+  <footer class="container-fluid text-center">
+    <a href="#main" title="Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+    <p>2017 SungJae Kim.</p>
+    <p>
+      <a href="http://facebook.com/umja345"><span class="fa fa-facebook-official social"></span></a>
+      <a href="https://www.linkedin.com/in/kimsungjae"><span class="fa fa-linkedin-square social"></span></a>
+      <!-- <a href="http://instagram.com/jkimbab"><span class="fa fa-instagram social"></span></a> -->
+      <a href="https://github.com/sungjkim34"><span class="fa fa-github social"></span></a>
+    </p>
+  </footer>
+</body>
+
+</html>

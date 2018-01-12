@@ -1,0 +1,100 @@
+body{
+    font-family: orkney;
+    color: #9d9ca1;
+}
+h3{
+    color:black;
+}
+iAm{
+    color: #0187c6;
+    float: left;
+    padding: 9px;
+    font-size: 20px;
+}
+lt{
+  margin-left: -20px;
+}
+.sideLabel {
+    float: left;
+    padding: 5px;
+}
+.col-sm-12{
+    padding-top: 5px;
+}
+.verticalLine {
+    border-left: solid #000000;
+    border-width: 1px;
+    border-color: #9d9ca1;
+    padding-left: 5px;
+    display: inline-block;
+}
+sectionTitle {
+    border-top: solid #000000;
+    border-bottom: solid #000000;
+    border-width: 1px;
+    padding: 2px;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    color: black;
+    margin-bottom: 5px;
+}
+.container-fluid {
+    padding: 20px 20px;
+}
+.logo{
+    float: left;
+    padding: 8px;
+    font-size: 50px;
+    color: #0187c6;
+}
+.sideIcon{
+    font-size: 25px;
+    padding: 5px;
+    float: left;
+    display: inline-block;
+    color: #0187c6;
+}
+.social{
+    font-size: 25px;
+    padding: 5px;
+}
+.row{
+  margin-bottom: 35px;
+  margin-left: 10px;
+  width: 95%;
+}
+@media screen and (max-width: 768px){
+    .col-sm-4 {
+        text-align: center;
+        /*margin: 25px 0;*/
+    }
+    .col-sm-8 {
+        text-align: center;
+        /*margin: 25px 0;*/
+    }
+    .col-sm-3{
+        text-align: center;
+        /*margin: 25px 0;*/
+    }
+    .col-sm-6 {
+      padding: 5px;
+    }
+    .col-sm-12 {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .container-fluid{
+      padding-left: 0;
+      padding-right: 0;
+    }
+}
+@media screen and (min-width: 770px) and (max-width: 880px){
+  ul{
+    padding-left: 0;
+  }
+}
+@font-face {
+    font-family: orkney;
+    src: url(fonts/orkney.otf);
+}
