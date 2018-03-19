@@ -30,36 +30,23 @@ Sungjae Kim
   <script src="js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  <!--        Smooth Scrolling-->
+  <!--Smooth Scrolling-->
   <script>
     $(document).ready(function() {
-      // Add smooth scrolling to all links in navbar + footer link
       $(".navbar a, footer a[href='#main'], .col-sm-8 a[href='#contact']").on('click', function(event) {
-
-        // Prevent default anchor click behavior
         event.preventDefault();
-
-        // Store hash
         var hash = this.hash;
-
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
         $('html, body').animate({
           scrollTop: $(hash).offset().top
         }, 900, function() {
-
-          // Add hash (#) to URL when done scrolling (default click behavior)
           window.location.hash = hash;
         });
       });
     })
   </script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106164040-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
       dataLayer.push(arguments);
     }
@@ -111,7 +98,7 @@ Sungjae Kim
           </div>
           <div class="col-sm-8">
             <p>(404)-775-6111</p>
-            <p>sjk@sungjkim.com</p>
+            <p>sjk@sungjaekim.com</p>
           </div>
         </div>
       </div>
@@ -187,6 +174,7 @@ Sungjae Kim
               <li>React + Redux</li>
               <li>Vanilla JavaScript + jQuery</li>
               <li>Angular</li>
+              <li>AngularJS</li>
               <li>React Native</li>
             </ul>
           </div>
@@ -261,11 +249,67 @@ Sungjae Kim
         </div>
       </div>
 
+      <div class="row">
+        <span class="fa fa-sitemap sideIcon"></span>
+        <sectionTitle>EXTRA CURRICULAR</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2018</div>
+          <div class="col-sm-10">
+            <b>UGAHacks</b><br/> UGA | <i>Athens, GA</i>
+            <ul>
+              <lt><a href="https://devpost.com/software/joinotes">JoiNotes</a></lt>
+              <li>Built frontend mobile app for Android & iOS using React Native.</li>
+              <li>Built backend REST service using Node.js & MySQL.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2016-2017</div>
+          <div class="col-sm-10">
+            <b>Tech Committee</b><br/> PantherHackers | <i>Atlanta, GA</i>
+            <ul>
+              <li><a href="http://www.sungjkim.com/PH_Website/">Kata Website</a> - Hand-coded kata website to join the PH Tech Committee.</li>
+              <li>Set up a development environment for the PantherHackers main website.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">2014-2016</div>
+          <div class="col-sm-10">
+            <b>Member</b><br/> Korean Undergraduate Student Association | <i>Atlanta, GA</i>
+          </div>
+        </div>
+      </div>
+
     </div>
+
     <div class="col-sm-6">
       <div class="row">
         <span class="fa fa-briefcase sideIcon"></span>
         <sectionTitle>EXPERIENCE</sectionTitle>
+        <div class="col-sm-12">
+          <div class="col-sm-2">Spring 2018</div>
+          <div class="col-sm-10">
+            <b>Software Engineer Intern</b><br/> Skitter | <i>Norcross, GA</i>
+            <ul>
+              <lt>SkitterTV</lt>
+              <li>Built Skitter’s TV client platform using React Native from ground up for AndroidTV.</li>
+              <li>Built custom key mapping of the remote control using device event emitters.</li>
+              <li>Implemented Live TV using HTTP Live Streaming technology.</li>
+              <li>Designed all custom UI components used within the app.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">Spring 2018</div>
+          <div class="col-sm-10">
+            <b>Web Development Consultant</b><br/> Advanced Claims Technology | <i>Alpharetta, GA</i>
+            <ul>
+              <li>Implemented AngularJS to an existing ASP.NET project.</li>
+              <li>Refactored the entire codebase from vanilla JavaScript to AngularJS.</li>
+            </ul>
+          </div>
+        </div>
         <div class="col-sm-12">
           <div class="col-sm-2">Fall 2017</div>
           <div class="col-sm-10">
@@ -331,16 +375,17 @@ Sungjae Kim
             </ul>
           </div>
         </div>
-        <div class="col-sm-12">
+        <!-- <div class="col-sm-12">
           <div class="col-sm-2">2016-2017</div>
           <div class="col-sm-10">
             <b>Tech Committee</b><br/> PantherHackers | <i>Atlanta, GA</i>
             <ul>
               <li><a href="http://www.sungjkim.com/PH_Website/">Kata Website</a> - Hand-coded kata website to join the PH Tech Committee.</li>
               <li>Set up a development environment for the PantherHackers main website.</li>
+              <li>Helped develop the new PantherHackers website.</li>
             </ul>
           </div>
-        </div>
+        </div> -->
         <div class="col-sm-12">
           <div class="col-sm-2">2015-2016</div>
           <div class="col-sm-10">
@@ -351,39 +396,12 @@ Sungjae Kim
             </ul>
           </div>
         </div>
-        <div class="col-sm-12">
-          <div class="col-sm-2">2015</div>
-          <div class="col-sm-10">
-            <b>Manager</b><br/> Advanced Fresh Concept | <i>Carrollton, GA</i>
-            <ul>
-              <li>Worked and train employees in a fast paced environment.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-12">
-          <div class="col-sm-2">2014</div>
-          <div class="col-sm-10">
-            <b>Flexible Crew Member</b><br/> Yoi Yoi | <i>Atlanta, GA</i>
-            <ul>
-              <li>Worked host, waiter, sushi chef, and delivery.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-12">
-          <div class="col-sm-2">2013</div>
-          <div class="col-sm-10">
-            <b>Flexible Crew Member</b><br/> Yum Bunz | <i>Atlanta, GA</i>
-            <ul>
-              <li>Worked busser, cashier, front line, back line, and expo.</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <div class="container-fluid text-center">
     <p>This resume is mobile friendly.</p>
-    <p>Last updated on August 18, 2017</p>
+    <p>Last updated on March 18, 2017</p>
     <a href="SungJaeKim_Resume.pdf">Download Resume</a> (.pdf)
   </div>
   <!--        Footer-->
