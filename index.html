@@ -32,13 +32,13 @@ Sungjae Kim
 
   <!--Smooth Scrolling-->
   <script>
-    $(document).ready(function() {
-      $(".navbar a, footer a[href='#main'], .col-sm-8 a[href='#contact']").on('click', function(event) {
+    $(document).ready(function () {
+      $(".navbar a, footer a[href='#main'], .col-sm-8 a[href='#contact']").on('click', function (event) {
         event.preventDefault();
         var hash = this.hash;
         $('html, body').animate({
           scrollTop: $(hash).offset().top
-        }, 900, function() {
+        }, 900, function () {
           window.location.hash = hash;
         });
       });
@@ -60,9 +60,11 @@ Sungjae Kim
   <!--  Title Bar  -->
   <div id="about" class="container-fluid">
     <div class="col-sm-12">
-      <div class="logo"><span class="fa fa-graduation-cap "></span></div>
+      <div class="logo">
+        <span class="fa fa-code"></span>
+      </div>
       <h3>SungJae Kim</h3>
-      <h5>Student | Designer | Developer</h5>
+      <h5>Engineer | Designer | Developer</h5>
     </div>
   </div>
 
@@ -77,7 +79,8 @@ Sungjae Kim
             <iAm>I am...</iAm>
           </div>
           <div class="col-sm-8">
-            <p>A motivated student seeking job opportunities to work as a software engineer to contribute skills and abilities to the growth of the organization and gain knowledge and expertise.
+            <p>A motivated new graduate seeking job opportunities to work as a software engineer to contribute skills and abilities
+              to the growth of the organization and gain knowledge and expertise.
           </div>
         </div>
       </div>
@@ -87,14 +90,16 @@ Sungjae Kim
         <sectionTitle>INFORMATION</sectionTitle>
         <div class="col-sm-12">
           <div class="col-sm-4">
-            <p><b>Location</b>: </p>
+            <p>
+              <b>Location</b>: </p>
           </div>
           <div class="col-sm-8">
-            <p>3382 Chelsea Park Ln #A</p>
-            <p>Norcross, GA 30092</p>
+            <p>6085 Water St. Apt #2410</p>
+            <p>Plano, TX 75024</p>
           </div>
           <div class="col-sm-4">
-            <p><b>Contact</b>: </p>
+            <p>
+              <b>Contact</b>: </p>
           </div>
           <div class="col-sm-8">
             <p>(404)-775-6111</p>
@@ -107,17 +112,23 @@ Sungjae Kim
         <span class="fa fa-graduation-cap sideIcon"></span>
         <sectionTitle>EDUCATION</sectionTitle>
         <div class="col-sm-12">
-          <div class="col-sm-4"><b>Georgia State University</b></div>
-          <div class="col-sm-3"><span class="fa fa-star-half-o"></span></div>
-          <div class="col-sm-4">2013 - 2018</div>
+          <div class="col-sm-7">
+            <b>Georgia State University</b>
+          </div>
+          <!-- <div class="col-sm-3"><span class="fa fa-star"></span></div> -->
+          <div class="col-sm-5">2013 - 2018</div>
         </div>
         <div class="col-sm-12">
-          <div class="col-sm-7"><i>Bachelor of Science in Computer Science</i></div>
+          <div class="col-sm-7">
+            <i>Bachelor of Science in Computer Science</i>
+          </div>
         </div>
         <div class="col-sm-12">
-          <div class="col-sm-4"><b>Alpharetta High School</b></div>
-          <div class="col-sm-3"><span class="fa fa-star"></span></div>
-          <div class="col-sm-4">2009 - 2013</div>
+          <div class="col-sm-7">
+            <b>Alpharetta High School</b>
+          </div>
+          <!-- <div class="col-sm-3"><span class="fa fa-star"></span></div> -->
+          <div class="col-sm-5">2009 - 2013</div>
         </div>
       </div>
 
@@ -165,7 +176,9 @@ Sungjae Kim
         <sectionTitle>SKILLS</sectionTitle>
         <div class="col-sm-12">
           <div class="col-sm-5">
-            <p><b>Front-End</b></p>
+            <p>
+              <b>Front-End</b>
+            </p>
           </div>
           <div class="col-sm-7">
             <ul>
@@ -180,7 +193,9 @@ Sungjae Kim
           </div>
 
           <div class="col-sm-5">
-            <p><b>Back-End</b></p>
+            <p>
+              <b>Back-End</b>
+            </p>
           </div>
           <div class="col-sm-7">
             <ul>
@@ -193,7 +208,9 @@ Sungjae Kim
           </div>
 
           <div class="col-sm-5">
-            <p><b>CMS</b></p>
+            <p>
+              <b>CMS</b>
+            </p>
           </div>
           <div class="col-sm-7">
             <ul>
@@ -202,7 +219,9 @@ Sungjae Kim
           </div>
 
           <div class="col-sm-5">
-            <p><b>Databases</b></p>
+            <p>
+              <b>Databases</b>
+            </p>
           </div>
           <div class="col-sm-7">
             <ul>
@@ -214,7 +233,9 @@ Sungjae Kim
           </div>
 
           <div class="col-sm-5">
-            <p><b>Computational</b></p>
+            <p>
+              <b>Analytics</b>
+            </p>
           </div>
           <div class="col-sm-7">
             <ul>
@@ -223,7 +244,9 @@ Sungjae Kim
           </div>
 
           <div class="col-sm-5">
-            <p><b>VCS</b></p>
+            <p>
+              <b>VCS</b>
+            </p>
           </div>
           <div class="col-sm-7">
             <ul>
@@ -234,7 +257,9 @@ Sungjae Kim
           </div>
 
           <div class="col-sm-5">
-            <p><b>Basic Knowledge</b></p>
+            <p>
+              <b>Basic Knowledge</b>
+            </p>
           </div>
           <div class="col-sm-7">
             <ul>
@@ -255,9 +280,13 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">2018</div>
           <div class="col-sm-10">
-            <b>UGAHacks</b><br/> UGA | <i>Athens, GA</i>
+            <b>UGAHacks</b>
+            <br/> UGA |
+            <i>Athens, GA</i>
             <ul>
-              <lt><a href="https://devpost.com/software/joinotes">JoiNotes</a></lt>
+              <lt>
+                <a href="https://devpost.com/software/joinotes">JoiNotes</a>
+              </lt>
               <li>Built frontend mobile app for Android & iOS using React Native.</li>
               <li>Built backend REST service using Node.js & MySQL.</li>
             </ul>
@@ -266,9 +295,12 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">2016-2017</div>
           <div class="col-sm-10">
-            <b>Tech Committee</b><br/> PantherHackers | <i>Atlanta, GA</i>
+            <b>Tech Committee</b>
+            <br/> PantherHackers |
+            <i>Atlanta, GA</i>
             <ul>
-              <li><a href="http://www.sungjkim.com/PH_Website/">Kata Website</a> - Hand-coded kata website to join the PH Tech Committee.</li>
+              <li>
+                <a href="http://www.sungjkim.com/PH_Website/">Kata Website</a> - Hand-coded kata website to join the PH Tech Committee.</li>
               <li>Set up a development environment for the PantherHackers main website.</li>
             </ul>
           </div>
@@ -276,7 +308,9 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">2014-2016</div>
           <div class="col-sm-10">
-            <b>Member</b><br/> Korean Undergraduate Student Association | <i>Atlanta, GA</i>
+            <b>Member</b>
+            <br/> Korean Undergraduate Student Association |
+            <i>Atlanta, GA</i>
           </div>
         </div>
       </div>
@@ -288,22 +322,54 @@ Sungjae Kim
         <span class="fa fa-briefcase sideIcon"></span>
         <sectionTitle>EXPERIENCE</sectionTitle>
         <div class="col-sm-12">
-          <div class="col-sm-2">Spring 2018</div>
+          <div class="col-sm-2">Current</div>
           <div class="col-sm-10">
-            <b>Software Engineer Intern</b><br/> Skitter | <i>Norcross, GA</i>
+            <b>Software Engineer I</b>
+            <br/> Intuit |
+            <i>Plano, TX</i>
+            <ul>
+              <lt>ProConnect Tax Online - OIA</lt>
+              <li>Currently working as a Software Engineer on the OIA team starting June 2018.</li>
+              <li>Developed status page used for data conversion.</li>
+              <li>Built & contributed Step Flow component to the Intuit Design System (IDS).</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">Current</div>
+          <div class="col-sm-10">
+            <b>Software Engineer Consultant</b>
+            <br/> Skitter |
+            <i>Norcross, GA</i>
             <ul>
               <lt>SkitterTV</lt>
-              <li>Built Skitter’s TV client platform using React Native from ground up for AndroidTV.</li>
-              <li>Built custom key mapping of the remote control using device event emitters.</li>
-              <li>Implemented Live TV using HTTP Live Streaming technology.</li>
-              <li>Designed all custom UI components used within the app.</li>
+              <li>Currently working as a Software Engineer consultant starting June 2018.</li>
+              <li>Review new code and provide necessary comments & advices.</li>
             </ul>
           </div>
         </div>
         <div class="col-sm-12">
           <div class="col-sm-2">Spring 2018</div>
           <div class="col-sm-10">
-            <b>Web Development Consultant</b><br/> Advanced Claims Technology | <i>Alpharetta, GA</i>
+            <b>Software Engineer Intern</b>
+            <br/> Skitter |
+            <i>Norcross, GA</i>
+            <ul>
+              <lt>SkitterTV</lt>
+              <li>Built Skitter’s TV client platform using React Native + Redux from ground up for AndroidTV.</li>
+              <li>Built custom key mapping of the remote control using device event emitters.</li>
+              <li>Implemented Live TV using HTTP Live Streaming technology.</li>
+              <li>Designed all custom UI components used within the app.</li>
+              <li>Built unit tests using Jest, Enzyme, and Istanbul.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-2">Spring 2018</div>
+          <div class="col-sm-10">
+            <b>Web Development Consultant</b>
+            <br/> Advanced Claims Technology |
+            <i>Alpharetta, GA</i>
             <ul>
               <li>Implemented AngularJS to an existing ASP.NET project.</li>
               <li>Refactored the entire codebase from vanilla JavaScript to AngularJS.</li>
@@ -313,12 +379,16 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">Fall 2017</div>
           <div class="col-sm-10">
-            <b>Software Developer Intern</b><br/> UPS | <i>Atlanta, GA</i>
+            <b>Software Developer Intern</b>
+            <br/> UPS |
+            <i>Atlanta, GA</i>
             <ul>
               <lt>Network Planning - Demand</lt>
-              <li>Built predictive data models with historical data to forecast future incoming packages using Triple Exponential Smoothing (Holt-Winters) with R.</li>
+              <li>Built predictive data models with historical data to forecast future incoming packages using Triple Exponential
+                Smoothing (Holt-Winters) with R.</li>
               <li>Implemented parallel computation to speed up forecasting by 8x by making use of core clusters.</li>
-              <li>Developed feature for visualizing data for NPT Angular 4 web application to visualize data for base, actual, forecast, and plan using NVD3.js.</li>
+              <li>Developed feature for visualizing data for NPT Angular 4 web application to visualize data for base, actual,
+                forecast, and plan using NVD3.js.</li>
               <li>Implemented drag and drop ability to move change-sets within proposal list of the NPT Application.</li>
               <li>Implemented Golden Layout to allow multi-window layout management.</li>
               <li>Refactored code to increase modularity and reusability of components by decoupling components.</li>
@@ -328,9 +398,11 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">Summer 2017</div>
           <div class="col-sm-10">
-            <b>Software Engineer Intern</b><br/> Intuit | <i>Plano, TX</i>
+            <b>Software Engineer Intern</b>
+            <br/> Intuit |
+            <i>Plano, TX</i>
             <ul>
-              <lt>ProConnect Tax Online</lt>
+              <lt>ProConnect Tax Online - R2R</lt>
               <li>Developed panel used for tax returns in using AngularJS and React.</li>
               <li>Built new widget to allow accountants to create template requests using React + Redux.</li>
               <li>Implemented drag and drop feature to change and maintain the order of checklists within a request.</li>
@@ -343,11 +415,14 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">Spring 2017</div>
           <div class="col-sm-10">
-            <b>Software Developer Intern</b><br/> UPS | <i>Atlanta, GA</i>
+            <b>Software Developer Intern</b>
+            <br/> UPS |
+            <i>Atlanta, GA</i>
             <ul>
               <lt>Developed automatic inventory tracking completely from scratch:</lt>
               <li>Built native Android application programmed using C# on Xamarin as a beacon receiver.</li>
-              <li>Built RESTful API using C# as part of the inventory tracking system used by the receiver application, QR and barcode scanning application, and the UI.</li>
+              <li>Built RESTful API using C# as part of the inventory tracking system used by the receiver application, QR and
+                barcode scanning application, and the UI.</li>
               <li>Built a Map UI using HTML, jQuery, Bootstrap on ASP.net MVC with filtering and searching feature.</li>
               <lt>Improved upon previous C# projects passed on from a different team:</lt>
               <li>A driver dispatch project using ASP.Net MVC.</li>
@@ -358,19 +433,32 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">2016-2017</div>
           <div class="col-sm-10">
-            <b>Web & Software Developer</b><br/> Fyminds | <i>Atlanta, GA</i>
+            <b>Web & Software Developer</b>
+            <br/> Fyminds |
+            <i>Atlanta, GA</i>
             <ul>
               <lt>WordPress Site</lt>
-              <li><a href="http://www.shundaogo.com/">ShunDaoGo</a> - Helped set up site.</li>
-              <li><a href="http://www.os-spa.com/">OsSpa</a> - Set up site.</li>
-              <li><a href="http://www.myichot.com/">IC HOT</a> - Set up and maintain sites from start to finish for clients. <br/><a href="http://www.sungjkim.com/ichotflyer.png">[Flyer]</a> - Designed a flyer using Adobe Photoshop.</li>
-              <li><a href="http://www.lifeartcabinetry.com/">LifeArtCabinetry</a> - Designed a popup based off of jQuery.</li>
-              <li><a href="http://www.tireaccents.com/">TireAccents</a> - Set up and maintain the TireAccents site, a start up business for selling car decals.</li>
+              <li>
+                <a href="http://www.shundaogo.com/">ShunDaoGo</a> - Helped set up site.</li>
+              <li>
+                <a href="http://www.os-spa.com/">OsSpa</a> - Set up site.</li>
+              <li>
+                <a href="http://www.myichot.com/">IC HOT</a> - Set up and maintain sites from start to finish for clients.
+                <br/>
+                <a href="http://www.sungjkim.com/ichotflyer.png">[Flyer]</a> - Designed a flyer using Adobe Photoshop.</li>
+              <li>
+                <a href="http://www.lifeartcabinetry.com/">LifeArtCabinetry</a> - Designed a popup based off of jQuery.</li>
+              <li>
+                <a href="http://www.tireaccents.com/">TireAccents</a> - Set up and maintain the TireAccents site, a start up business for selling car decals.</li>
               <li>Researched to build plugin for importing XML file from WordPress e-commerce site into an application.</li>
               <lt>Web Application</lt>
-              <li><a href="http://www.pollify.us/">PolliFy</a> - Built backend from scratch using Express, Node.js, and MongoDB. Built frontend from scratch using EJS, Bootstrap, jQuery.</li>
+              <li>
+                <a href="http://www.pollify.us/">PolliFy</a> - Built backend from scratch using Express, Node.js, and MongoDB. Built frontend from scratch
+                using EJS, Bootstrap, jQuery.</li>
               <lt>Mobile Application</lt>
-              <li><a href="http://www.worktive.com/">Worktive</a> - Android Java development. Use of custom API to search for jobs. Android App Development Use of Java, JSON, Parser, MySQL, etc.</li>
+              <li>
+                <a href="http://www.worktive.com/">Worktive</a> - Android Java development. Use of custom API to search for jobs. Android App Development Use
+                of Java, JSON, Parser, MySQL, etc.</li>
               <li>Built java program to scrap from indeed.com demonstrates use of Jaunt and regex pattern/matcher.</li>
             </ul>
           </div>
@@ -389,7 +477,9 @@ Sungjae Kim
         <div class="col-sm-12">
           <div class="col-sm-2">2015-2016</div>
           <div class="col-sm-10">
-            <b>Math Instructor</b><br/> Mathnasium | <i>Norcross, GA</i>
+            <b>Math Instructor</b>
+            <br/> Mathnasium |
+            <i>Norcross, GA</i>
             <ul>
               <li>Tutored students K-12 in school math and SAT math.</li>
               <li>1st place in center instructors’ math equation competition.</li>
@@ -401,20 +491,26 @@ Sungjae Kim
   </div>
   <div class="container-fluid text-center">
     <p>This resume is mobile friendly.</p>
-    <p>Last updated on March 18, 2017</p>
+    <p>Last updated on July 11, 2018</p>
     <a href="SungJaeKim_Resume.pdf">Download Resume</a> (.pdf)
   </div>
   <!--        Footer-->
   <footer class="container-fluid text-center">
     <a href="#main" title="Top">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>
-    <p>2017 SungJae Kim.</p>
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>2018 SungJae Kim.</p>
     <p>
-      <a href="http://facebook.com/umja345"><span class="fa fa-facebook-official social"></span></a>
-      <a href="https://www.linkedin.com/in/kimsungjae"><span class="fa fa-linkedin-square social"></span></a>
+      <a href="http://facebook.com/umja345">
+        <span class="fa fa-facebook-official social"></span>
+      </a>
+      <a href="https://www.linkedin.com/in/kimsungjae">
+        <span class="fa fa-linkedin-square social"></span>
+      </a>
       <!-- <a href="http://instagram.com/jkimbab"><span class="fa fa-instagram social"></span></a> -->
-      <a href="https://github.com/sungjkim34"><span class="fa fa-github social"></span></a>
+      <a href="https://github.com/sungjkim34">
+        <span class="fa fa-github social"></span>
+      </a>
     </p>
   </footer>
 </body>
