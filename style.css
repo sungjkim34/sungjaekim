@@ -157,6 +157,10 @@ ul {
         width: 21%;
         text-align: right;
         padding-right: 20px;
+        /* The date is digits and caps, so it has almost no descender and its
+           optical centre sits ~1.5px above the 22px line box centre that the
+           title and the dot share. Nudge it down onto the same axis. */
+        padding-top: 1.5px;
     }
     .entry .col-sm-10 {
         width: 79%;
