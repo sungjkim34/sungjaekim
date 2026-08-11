@@ -235,7 +235,9 @@ ul {
    -------------------------------------------------------------------------- */
 .section-skills > .col-sm-12 {
     display: grid;
-    grid-template-columns: 140px minmax(0, 1fr);
+    /* 158px fits the longest label ("ML INFRASTRUCTURE") on one line; at 140
+       it wrapped while every other label stayed single-line. */
+    grid-template-columns: 158px minmax(0, 1fr);
     column-gap: 22px;
     row-gap: 13px;
     align-items: baseline;
