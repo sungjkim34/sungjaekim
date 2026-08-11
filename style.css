@@ -1,102 +1,410 @@
+/* ==========================================================================
+   Sungjae Kim — resume site
+
+   Type scale is deliberately wide (52 / 17 / 14 / 12) so the page has a
+   reading order: name, then role, then detail, then labels. Colour is
+   semantic, not decorative — accent blue means "interactive or current",
+   nothing else. Everything structural is monochrome.
+   ========================================================================== */
+
+:root {
+    --color-bg: #ffffff;
+    --color-text: #56555b;
+    --color-muted: #6e6d73;
+    --color-heading: #111114;
+    --color-accent: #0170a3;
+    --color-hairline: #dcdbe0;
+    --color-rule: #111114;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 body {
-    font-family: orkney;
-    color: #9d9ca1;
+    font-family: orkney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    font-size: 14px;
+    line-height: 1.55;
 }
-h3 {
-    color: black;
+
+/* --------------------------------------------------------------------------
+   Masthead
+   Flex row, so the logo and the name/tagline stack stay optically centred
+   against each other at any type size — no pixel matching to maintain.
+   -------------------------------------------------------------------------- */
+.masthead {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
 }
-iAm {
-    color: #0187c6;
-    float: left;
-    padding: 9px;
-    font-size: 20px;
+.logo {
+    font-size: clamp(28px, 1.2rem + 1.5vw, 36px);
+    line-height: 1;
+    color: var(--color-heading);
+    flex: none;
 }
-lt {
-    margin-left: -20px;
+h1 {
+    color: var(--color-heading);
+    font-size: clamp(30px, 1.3rem + 1.9vw, 40px);
+    line-height: 1.05;
+    font-weight: bold;
+    letter-spacing: -0.02em;
+    margin: 0;
 }
-.sideLabel {
-    float: left;
-    padding: 5px;
+.tagline {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin: 8px 0 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Section headers
+   Small tracked caps — these are labels, not content, so they sit low in the
+   hierarchy and let the job titles be the second-loudest thing on the page.
+   -------------------------------------------------------------------------- */
+.section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: 7px;
+    margin-bottom: 20px;
+}
+.section-title {
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: bold;
+    letter-spacing: 0.16em;
+    color: var(--color-heading);
+    margin: 0;
+}
+.sideIcon {
+    font-size: 15px;
+    line-height: 1;
+    color: var(--color-muted);
+    flex: none;
+}
+
+/* --------------------------------------------------------------------------
+   Entries (jobs, activities)
+   -------------------------------------------------------------------------- */
+.entry {
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+/* On desktop the gap moves from margin to the spine column's padding, so the
+   timeline reads as one unbroken line instead of a stack of dashes. */
+@media screen and (min-width: 768px) {
+    .entry {
+        margin-bottom: 0;
+    }
+    .entry .col-sm-10 {
+        padding-bottom: 26px;
+    }
+    /* line stops at the last entry's content rather than trailing past it */
+    .entry:last-child .col-sm-10 {
+        padding-bottom: 0;
+    }
+}
+.entry-title {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: bold;
+    color: var(--color-heading);
+    letter-spacing: -0.005em;
+    margin: 0;
+}
+.entry-meta {
+    font-size: 13px;
+    color: var(--color-muted);
+    margin: 1px 0 0 0;
+}
+.entry .col-sm-2 {
+    font-size: 13px;
+    color: var(--color-muted);
+}
+.project-label {
+    margin: 12px 0 0 0;
+    font-style: italic;
+    color: var(--color-muted);
+}
+.project-label + ul {
+    margin-top: 3px;
+}
+ul {
+    margin-bottom: 0;
+}
+
+/* Timeline spine, desktop only. The date rail was the strongest structural
+   idea in the original layout and was carrying no visual weight. */
+@media screen and (min-width: 768px) {
+    .entry .col-sm-2 {
+        width: 21%;
+        text-align: right;
+        padding-right: 20px;
+    }
+    .entry .col-sm-10 {
+        width: 79%;
+        position: relative;
+        border-left: 1px solid var(--color-hairline);
+        padding-left: 24px;
+    }
+    .entry .col-sm-10::before {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 8px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--color-bg);
+        border: 1px solid var(--color-hairline);
+    }
+    /* the only other place accent blue is allowed */
+    .entry.is-current .col-sm-10::before {
+        background: var(--color-accent);
+        border-color: var(--color-accent);
+    }
+    .entry.is-current .col-sm-2 {
+        color: var(--color-accent);
+        font-weight: bold;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Sections and rhythm
+   Unequal spacing — sections breathe more than the entries inside them.
+   -------------------------------------------------------------------------- */
+.row {
+    /* Bootstrap's -15px row gutters exist to cancel the padding of a parent
+       .container. These rows live in .container-fluid, whose padding shrinks
+       on mobile, so the negative margins would push content off screen. */
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 52px;
 }
 .col-sm-12 {
     padding-top: 5px;
 }
-.verticalLine {
-    border-left: solid #000000;
-    border-width: 1px;
-    border-color: #9d9ca1;
-    padding-left: 5px;
-    display: inline-block;
-}
-sectionTitle {
-    border-top: solid #000000;
-    border-bottom: solid #000000;
-    border-width: 1px;
-    padding: 5px 2px 2px 2px;
-    font-size: 20px;
-    font-weight: bold;
-    display: block;
-    color: black;
-    margin-bottom: 5px;
-}
 .container-fluid {
-    padding: 20px 20px;
+    padding: 20px;
 }
-.logo {
-    float: left;
-    padding: 8px;
-    font-size: 50px;
-    color: #0187c6;
+#about.container-fluid {
+    padding-bottom: 0;
 }
-.sideIcon {
-    font-size: 25px;
-    padding: 6px;
+
+/* the "I am..." flourish, restyled as part of the label system */
+.i-am {
+    color: var(--color-muted);
     float: left;
-    color: #0187c6;
+    padding: 2px 9px 9px 0;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Skills
+   The label/list pairs were floated .col-sm-5 / .col-sm-7 with no per-pair
+   .row wrapper. A short row (CMS, one item) left a float hanging and every
+   pair after it snagged into the wrong column — labels landed on the right,
+   lists on the left. A two-column grid places each pair on its own row and
+   removes the float behaviour entirely.
+   -------------------------------------------------------------------------- */
+.section-skills > .col-sm-12 {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    column-gap: 22px;
+    row-gap: 13px;
+    align-items: baseline;
+}
+.section-skills .col-sm-5,
+.section-skills .col-sm-7 {
+    width: auto;
+    float: none;
+    padding: 0;
+}
+.section-skills .col-sm-5 p {
+    margin: 0;
+}
+.section-skills .col-sm-5 b {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-heading);
+    font-weight: bold;
+}
+/* inline runs rather than bulleted lists — a skills list is a set, not a
+   sequence, and bullets on a one-item list read as a mistake */
+.section-skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.section-skills li {
+    display: inline;
+}
+.section-skills li:not(:last-child)::after {
+    content: " · ";
+    color: var(--color-muted);
+}
+
+a {
+    color: var(--color-accent);
+}
+a:hover,
+a:focus {
+    color: #01527a;
+}
+a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }
 .social {
-    font-size: 25px;
+    font-size: 22px;
     padding: 5px;
+    color: var(--color-muted);
 }
 .footer-social-link:hover {
     text-decoration: none;
 }
-.row {
-    margin-bottom: 35px;
-    margin-left: 10px;
-    width: 95%;
+.footer-social-link:hover .social {
+    color: var(--color-accent);
 }
-@media screen and (max-width: 768px) {
-    .col-sm-4 {
-        text-align: center;
-        /*margin: 25px 0;*/
-    }
-    .col-sm-8 {
-        text-align: center;
-        /*margin: 25px 0;*/
-    }
+footer {
+    margin-top: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-hairline);
+    font-size: 13px;
+    color: var(--color-muted);
+}
+.resume-download {
+    font-size: 13px;
+    color: var(--color-muted);
+}
+.verticalLine {
+    border-left: 1px solid var(--color-hairline);
+    padding-left: 5px;
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   Stacked layout
+   767.98 not 768: Bootstrap's .col-sm-* grid turns on at min-width 768, so a
+   max-width of 768 makes both the stacked and two-column rules fire at once.
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 767.98px) {
+    /* The original rules centred .col-sm-4/8/3 only, so SUMMARY, INFORMATION
+       and LANGUAGES rendered centred while EDUCATION, SKILLS and EXPERIENCE
+       stayed left — every section started on a different axis. */
+    .col-sm-4,
+    .col-sm-8,
     .col-sm-3 {
-        text-align: center;
-        /*margin: 25px 0;*/
+        text-align: left;
+    }
+    /* floating this pushes the summary into an L-shape at narrow widths */
+    .i-am {
+        float: none;
+        padding: 0 0 6px 0;
+    }
+    .col-sm-4 p,
+    .col-sm-8 p {
+        margin-bottom: 4px;
+    }
+    /* label sits above its skills run rather than beside it */
+    .section-skills > .col-sm-12 {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 4px;
+    }
+    .section-skills .col-sm-7 {
+        margin-bottom: 10px;
     }
     .col-sm-6 {
         padding: 5px;
     }
     .col-sm-12 {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-    .container-fluid {
         padding-left: 0;
         padding-right: 0;
     }
-}
-@media screen and (min-width: 770px) and (max-width: 880px) {
-    ul {
-        padding-left: 0;
+    .container-fluid {
+        /* keeps text off the screen edge now that .row no longer offsets it */
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .row {
+        margin-bottom: 40px;
+    }
+    /* date reads as a kicker above the role rather than a stranded column */
+    .entry .col-sm-2 {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding-bottom: 2px;
+    }
+    .entry.is-current .col-sm-2 {
+        color: var(--color-accent);
+        font-weight: bold;
     }
 }
+@media screen and (min-width: 768px) and (max-width: 880px) {
+    ul {
+        padding-left: 18px;
+    }
+}
+
+@media print {
+    body {
+        color: #000;
+        font-size: 10.5pt;
+    }
+    .sideIcon,
+    .logo,
+    .i-am,
+    .entry-meta,
+    .project-label,
+    .entry .col-sm-2 {
+        color: #000;
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    /* footer nav, social links and the download prompt are useless on paper */
+    footer,
+    .resume-download {
+        display: none;
+    }
+    .row {
+        margin-bottom: 22px;
+    }
+    .entry .col-sm-10 {
+        border-left: none;
+        padding-left: 12px;
+    }
+    .entry .col-sm-10::before {
+        display: none;
+    }
+    .section-head {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+}
+
 @font-face {
     font-family: orkney;
     src: url(fonts/orkney.otf);
+    font-display: swap;
 }
