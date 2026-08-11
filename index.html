@@ -423,6 +423,21 @@ Sungjae Kim
             <h3 class="entry-title">Senior Machine Learning Engineer</h3>
             <p class="entry-meta">Intuit | <i>Plano, TX</i></p>
             <p class="project-label">A2D - Document Understanding Platform</p>
+            <ul>
+              <li>Led phase one of AnyDocIn, directing six engineers across several partner teams from planning
+                through release.</li>
+              <li>Delivered the Tax Extraction and Orchestration Service on schedule with high unit test coverage
+                and no production performance regressions, then led its recertification and traffic split.</li>
+              <li>Shipped 1040 extraction for specialized tax solutions, leading the engineering team through the
+                first release.</li>
+              <li>Built generic confidence models for numeric, name, address, and date fields, generalizing earlier
+                per-form models to work across document types.</li>
+              <li>Added normalized bounding boxes to the Tax Extraction Service, enabling the Review &amp; Verify
+                experience in Intuit's Virtual Expert Platform.</li>
+              <li>Modernized the tax extraction stack: migrated to FastAPI with async, consolidated into a monorepo,
+                and wrote the shared async libraries and document digitization library the rest of the team built on.</li>
+              <li>Mentored junior engineers and raised design and code review standards across the team.</li>
+            </ul>
           </div>
         </div>
         <div class="col-sm-12 entry">
@@ -436,8 +451,13 @@ Sungjae Kim
                 time. It saves roughly 2,000 engineering and labeling hours per year and 10 engineering hours per
                 release, and has since expanded to support model evaluation and other teams.</li>
               <li>Presented Helios at TechCon, Intuit's internal engineering conference.</li>
+              <li>Trained and released confidence models for W-2 and 1099-G that cut filing time for the customer
+                cohorts using them, and built the evaluation tooling the team used to track model performance.</li>
               <li>Expanded tax document extraction coverage to 1099-DIV, 1099-INT, and 1098 forms.</li>
-              <li>Trained an R-CNN model for Box 12 detection and segmentation.</li>
+              <li>Trained an R-CNN model for Box 12 detection and segmentation, plus an is-blank classifier so
+                downstream products could tell a deliberately empty box from a failed extraction. Box 12 was the
+                most frequently unextracted field on the form.</li>
+              <li>Prototyped on-device document classification and extraction using CoreML and Swift.</li>
               <li>Established the team's CI/CD pipelines and engineering standards for its Python libraries and
                 services on AgI, Intuit's infrastructure-as-code layer over AWS CloudFormation.</li>
             </ul>
