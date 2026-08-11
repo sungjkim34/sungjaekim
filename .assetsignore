@@ -1,0 +1,6 @@
+# Files kept in the repo but not uploaded as public site assets.
+# https://developers.cloudflare.com/workers/static-assets/
+tools
+README.md
+wrangler.toml
+.gitignore

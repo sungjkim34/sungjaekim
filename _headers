@@ -1,0 +1,35 @@
+# Cloudflare Workers static-assets header rules.
+# Applied at the edge; first matching rule set wins per header.
+# Docs: https://developers.cloudflare.com/workers/static-assets/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
+
+# Fingerprint-less assets that effectively never change. If a font or the
+# stylesheet is ever edited, bump the querystring on its <link>/@font-face
+# reference, or these will stay cached for a year.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/style.css
+  Cache-Control: public, max-age=604800
+
+/og-image.png
+  Cache-Control: public, max-age=2592000
+
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+
+/ichotflyer.png
+  Cache-Control: public, max-age=2592000
+
+/SungjaeKim_Resume.pdf
+  Cache-Control: public, max-age=86400
