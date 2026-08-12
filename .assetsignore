@@ -4,3 +4,7 @@ tools
 README.md
 wrangler.toml
 .gitignore
+
+# 3.2MB Photoshop original, kept in the repo as the master. The site links
+# ichotflyer.jpg (1600px, 367KB) instead.
+ichotflyer.png
