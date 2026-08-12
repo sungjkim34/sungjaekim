@@ -234,6 +234,11 @@ ul {
    removes the float behaviour entirely.
    -------------------------------------------------------------------------- */
 .section-skills > .col-sm-12 {
+    /* The grid cells below have their column padding zeroed, which left this
+       the only section flush to the container edge while every other one is
+       indented by .col-sm-4/.col-sm-8's 15px. Re-apply it on the container:
+       15px of its own plus the 15px the inner cells would have contributed. */
+    padding-left: 30px;
     display: grid;
     /* 158px fits the longest label ("ML INFRASTRUCTURE") on one line; at 140
        it wrapped while every other label stayed single-line. */
@@ -339,6 +344,9 @@ footer {
     .section-skills > .col-sm-12 {
         grid-template-columns: minmax(0, 1fr);
         row-gap: 4px;
+        /* .col-sm-12 padding drops to 0 on mobile, so only the 15px the inner
+           cells would have contributed is needed here */
+        padding-left: 15px;
     }
     .section-skills .col-sm-7 {
         margin-bottom: 10px;
@@ -376,10 +384,121 @@ footer {
     }
 }
 
+@page {
+    size: letter;
+    margin: 0.4in 0.35in;
+}
+
 @media print {
+    /* Deliberately single-column. Floating the .col-sm-* grid back into two
+       columns for print made this worse, not better (13 pages vs 8): Chrome
+       paginates tall floats poorly, and break-inside:avoid on each entry then
+       pushes large gaps across page boundaries. Linear flow paginates cleanly.
+       The date rail keeps its own narrow column since it is short. */
+    /* Curated cut for the PDF: the site keeps the full history, the printed
+       resume shows the Intuit run plus summary, contact, education and
+       skills. One source of truth, so the two cannot drift. */
+    .print-hide {
+        display: none !important;
+    }
+
     body {
         color: #000;
-        font-size: 10.5pt;
+        font-size: 9pt;
+        line-height: 1.38;
+    }
+    /* In single-column print the date sits on its own line above the role,
+       costing a line per entry. Float it into a narrow rail instead. Safe to
+       float here because it is one line tall, unlike the full-height columns
+       that paginated catastrophically when floated. */
+    .entry .col-sm-2 {
+        float: left;
+        /* 86px wrapped "2024 - Present" and "2022 - 2024" onto two lines while
+           "2021 - 2022" fit on one, leaving the rail ragged. 116px fits the
+           longest of them. */
+        width: 116px;
+        text-align: right;
+        padding: 0 10px 0 0;
+        font-weight: bold;
+    }
+    .entry .col-sm-10 {
+        margin-left: 116px;
+    }
+
+    /* The left column stacks above EXPERIENCE in print rather than sitting
+       beside it, so it consumed a whole page on its own. These four sections
+       are label/value pairs that each burn a line on the label; flow them
+       inline instead and the column collapses to a few lines. */
+
+    /* SUMMARY: "I am..." runs into the sentence it introduces */
+    section[aria-labelledby="summary-heading"] .col-sm-4,
+    section[aria-labelledby="summary-heading"] .col-sm-8 {
+        display: inline;
+        padding: 0;
+    }
+    section[aria-labelledby="summary-heading"] p {
+        display: inline;
+        margin: 0;
+    }
+    .i-am {
+        display: inline;
+        float: none;
+        /* 0.14em tracking is applied after the final character too, which on
+           top of padding left a three-space gap before the sentence */
+        letter-spacing: 0.1em;
+        padding: 0;
+    }
+
+    /* INFORMATION: one contact line, labels dropped */
+    section[aria-labelledby="information-heading"] .col-sm-4 {
+        display: none;
+    }
+    section[aria-labelledby="information-heading"] .col-sm-8 {
+        display: inline;
+        padding: 0;
+    }
+    section[aria-labelledby="information-heading"] .col-sm-8 p {
+        display: inline;
+        margin: 0;
+    }
+    section[aria-labelledby="information-heading"] .col-sm-8 p::after {
+        content: " \00b7  ";
+    }
+    section[aria-labelledby="information-heading"] .col-sm-8:last-of-type p:last-child::after {
+        content: "";
+    }
+
+    /* EDUCATION: degree, school and dates on one line */
+    section[aria-labelledby="education-heading"] .col-sm-12,
+    section[aria-labelledby="education-heading"] .col-sm-7,
+    section[aria-labelledby="education-heading"] .col-sm-5 {
+        display: inline;
+        padding: 0;
+    }
+    /* the zeroed padding above also removed the 15px indent that Summary and
+       Information keep from their .col-sm-12; put it back on the first part
+       only, so the line starts on the same axis as the sections above it */
+    section[aria-labelledby="education-heading"] .col-sm-12:not(:last-of-type) {
+        padding-left: 15px;
+    }
+    /* Separators only between the parts, never trailing the last one.
+       :first-of-type would match .section-head (the first div in the section),
+       not the first .col-sm-12 — hence :not(:last-of-type). */
+    section[aria-labelledby="education-heading"] .col-sm-12:not(:last-of-type) .col-sm-7::after,
+    section[aria-labelledby="education-heading"] .col-sm-12:not(:last-of-type) .col-sm-5::after {
+        content: " \00b7  ";
+    }
+
+    /* SKILLS: narrower label column, tighter rows */
+    /* 118px wrapped "MACHINE LEARNING" and "ML INFRASTRUCTURE" onto two lines
+       while the shorter labels stayed on one; 152px fits them all */
+    .section-skills > .col-sm-12 {
+        grid-template-columns: 152px minmax(0, 1fr);
+        column-gap: 14px;
+        row-gap: 4px;
+        /* print zeroes the inner cell padding on the other sections too, so
+           they all sit at the container's own 15px */
+        padding-left: 15px;
     }
     .sideIcon,
     .logo,
@@ -393,13 +512,35 @@ footer {
         color: #000;
         text-decoration: none;
     }
+    /* Bootstrap 3's print block appends every href after its link text
+       (a[href]:after{content:" (" attr(href) ")"}), which printed the email
+       and phone as "(mailto:...)" and "(tel:...)" and wrapped them mid-word.
+       Suppress it; the address is already spelled out as the link text. */
+    a[href]::after,
+    a[href]:after {
+        content: "" !important;
+    }
     /* footer nav, social links and the download prompt are useless on paper */
     footer,
     .resume-download {
         display: none;
     }
+    /* tightened to land the curated resume on two pages */
     .row {
-        margin-bottom: 22px;
+        margin-bottom: 13px;
+    }
+    .entry {
+        margin-bottom: 12px;
+    }
+    .section-head {
+        margin-bottom: 9px;
+        padding-bottom: 4px;
+    }
+    .project-label {
+        margin-top: 6px;
+    }
+    ul {
+        margin-bottom: 0;
     }
     .entry .col-sm-10 {
         border-left: none;
